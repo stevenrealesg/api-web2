@@ -4,30 +4,40 @@
 }
 
 .list-cards{
-  width: 80%;
+  width: 90%;
 }
 
 .cards-container{
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  /* grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
-  row-gap: 20px;
+  row-gap: 20px; */
+}
+
+.grid-item{
+  background-color: blueviolet;
+  width: 32%;
+  display: flex;
 }
 
 .card{
   background-color: #FFFFFF;
+  width: 32%;
   display: flex;
-  padding: 20px;
+  /* padding: 20px; */
+  margin-bottom: 2%;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .card-image{
-  padding: 0 5px;
+  padding: 5px;
 }
 
 .card-info{
-  padding: 0 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -36,4 +46,94 @@
 .card-title{
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.paginator{
+  text-align: right;
+  padding: 0 0 20px 0;
+}
+
+.paginator > button {
+  background-color: #FFFFFF;
+  border: 0;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  color: #666;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.footer{
+  width: 100%;
+  text-align: center;
+  color: #999;
+}
+
+.backdrop{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #333;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #333 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 1040px) {
+  .cards-container{
+    /* grid-template-columns: 50% 50%; */
+  }
+}
+
+@media (max-width: 730px) {
+  .cards-container{
+    /* grid-template-columns: 100%; */
+  }
 }

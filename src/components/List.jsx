@@ -4,6 +4,7 @@ import Pokemon from "./Pokemon";
 function List() {
 
     const [pokemons, setPokemons] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,14 +30,30 @@ function List() {
     }, [])
 
     return (
-        <div className="list-cards">
-            <h2>Lista de pokemones</h2>
-            <div className="cards-container">
-                {pokemons.map(pokemon => (
-                    <Pokemon key={pokemon.id} {...pokemon} />
-                ))}
+        <>
+            <div className="list-cards">
+                <h2>Lista de pokemones</h2>
+                <div className="paginator">
+                    <button className="p-back">{'< Anterior'}</button>
+                    <button className="p-next">{'Siguiente >'}</button>
+                </div>
+                <div className="cards-container">
+                    {pokemons.map(pokemon => (
+                        // <div className="grid-item">item</div>
+                        <Pokemon key={pokemon.id} {...pokemon} />
+                    ))}
+                </div>
+                <div className="footer">Created by Steven Reales Gonzalez</div>
             </div>
-        </div>
+            <div className="backdrop">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </>
     );
 }
 

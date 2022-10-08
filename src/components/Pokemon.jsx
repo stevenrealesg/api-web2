@@ -6,7 +6,7 @@ function Pokemon({image, name, weight}) {
             </div>
             <div className="card-info">
                 <div className="card-title">{name}</div>
-                <p>Peso: {weight} lb</p>
+                <div>Peso: {weight} lb</div>
             </div>
         </div>
      );
