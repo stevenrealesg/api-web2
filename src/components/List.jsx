@@ -8,7 +8,7 @@ function List() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=2")
+                const res = await fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=6")
                 const data = await res.json()
                 const promises = data.results.map(async item => {
                     const resPokemon = await fetch(item.url)
@@ -31,11 +31,13 @@ function List() {
     return (
         <div className="list-cards">
             <h2>Lista de pokemones</h2>
-            {pokemons.map(pokemon => (
-                <Pokemon key={pokemon.id} {...pokemon} />
-            ))}
+            <div className="cards-container">
+                {pokemons.map(pokemon => (
+                    <Pokemon key={pokemon.id} {...pokemon} />
+                ))}
+            </div>
         </div>
-     );
+    );
 }
 
 export default List;
