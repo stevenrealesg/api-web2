@@ -31,9 +31,9 @@ function List() {
     return (
         <div className="list-cards">
             <h2>Lista de pokemones</h2>
-            <Pokemon />
-            <Pokemon />
-            <Pokemon />
+            {pokemons.map(pokemon => (
+                <Pokemon key={pokemon.id} {...pokemon} />
+            ))}
         </div>
      );
 }
