@@ -11,9 +11,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2%;
-  /* grid-template-columns: repeat(3, 1fr);
-  column-gap: 20px;
-  row-gap: 20px; */
 }
 
 .grid-item{
@@ -24,9 +21,8 @@
 
 .card{
   background-color: #FFFFFF;
-  width: 32%;
   display: flex;
-  /* padding: 20px; */
+  width: 32%;
   margin-bottom: 2%;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -141,14 +137,15 @@
 }
 
 
-@media (max-width: 1040px) {
-  .cards-container{
-    /* grid-template-columns: 50% 50%; */
+@media (max-width: 1020px) {
+  .card{
+    width: 49%;
   }
 }
 
-@media (max-width: 730px) {
-  .cards-container{
-    /* grid-template-columns: 100%; */
+@media (max-width: 695px) {
+  .card{
+    width: 100%;
+    justify-content: center;
   }
 }
